@@ -1,0 +1,173 @@
+/* ============================================
+   ABOUT US PAGE STYLES
+   ============================================ */
+
+.about-page {
+  padding-top: var(--navbar-height);
+  background-color: var(--color-off-white);
+}
+
+.about-hero {
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  padding: clamp(5rem, 9vw, 8rem) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 500;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+.about-hero__title em {
+  font-style: italic;
+  color: var(--color-caramel);
+}
+
+.about-hero__desc {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: rgba(245, 240, 232, 0.85);
+  line-height: 1.8;
+}
+
+/* Two Column Story Section */
+.story-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  align-items: center;
+}
+
+.story-row--reverse {
+  direction: rtl;
+}
+
+.story-row--reverse > * {
+  direction: ltr;
+}
+
+.story-visual {
+  position: relative;
+  aspect-ratio: 4 / 3.4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-coffee-dark);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-quote-card {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--color-cream);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  border-left: 4px solid var(--color-coffee);
+  max-width: 280px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--color-espresso);
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.story-text h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--color-espresso);
+  line-height: 1.2;
+}
+
+.story-text p {
+  color: var(--color-text-body);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* Values Grid */
+.values-section {
+  background: var(--color-cream-light);
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+  padding: clamp(4rem, 7vw, 6rem) 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.value-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.value-num {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--color-coffee-light);
+  font-weight: 600;
+}
+
+.value-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-espresso);
+}
+
+.value-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+/* Roastery Visit Banner */
+.roastery-visit-banner {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .story-row {
+    grid-template-columns: 1fr;
+  }
+  .story-quote-card {
+    position: static;
+    margin-top: 1rem;
+    max-width: 100%;
+  }
+  .roastery-visit-banner {
+    grid-template-columns: 1fr;
+  }
+}

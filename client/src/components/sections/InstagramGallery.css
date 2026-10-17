@@ -1,0 +1,121 @@
+/* ============================================
+   INSTAGRAM / GALLERY SECTION
+   ============================================ */
+
+.gallery {
+  background: var(--color-off-white);
+}
+
+.gallery__header {
+  text-align: center;
+  margin-bottom: clamp(var(--space-8), 4vw, var(--space-12));
+}
+
+.gallery__title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--fs-2xl), 3vw, var(--fs-3xl));
+  font-weight: 400;
+  color: var(--color-espresso);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.gallery__handle {
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+.gallery__handle a {
+  color: var(--color-coffee-mid);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.gallery__handle a:hover {
+  color: var(--color-coffee);
+}
+
+/* Grid */
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.gallery__item {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--color-beige);
+  cursor: pointer;
+}
+
+.gallery__item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+  display: block;
+}
+
+/* Hover overlay */
+.gallery__item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,15,10,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+.gallery__item:hover .gallery__item-img {
+  transform: scale(1.08);
+}
+.gallery__item:hover .gallery__item-overlay {
+  opacity: 1;
+}
+.gallery__item-icon {
+  stroke: var(--color-cream);
+}
+
+/* Color block placeholders */
+.gallery__item-color {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+/* CTA */
+.gallery__cta {
+  text-align: center;
+}
+.gallery__follow-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-coffee);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-1);
+  transition: all var(--transition-fast);
+}
+.gallery__follow-btn:hover {
+  color: var(--color-espresso);
+  border-color: var(--color-espresso);
+  gap: var(--space-3);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .gallery__grid { grid-template-columns: repeat(4, 1fr); }
+  .gallery__grid .gallery__item:nth-child(n+5) { display: none; }
+}
+@media (max-width: 640px) {
+  .gallery__grid { grid-template-columns: repeat(3, 1fr); }
+  .gallery__grid .gallery__item:nth-child(n+4) { display: none; }
+}

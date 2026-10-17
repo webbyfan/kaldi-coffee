@@ -1,0 +1,120 @@
+/* ============================================
+   WHOLESALE CTA SECTION
+   ============================================ */
+
+.wholesale-cta {
+  background: var(--color-coffee-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texture overlay */
+.wholesale-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 70% 50%, rgba(201,148,90,0.15) 0%, transparent 65%),
+    radial-gradient(ellipse at 10% 80%, rgba(26,15,10,0.5) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.wholesale-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-12);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.wholesale-cta__label {
+  color: var(--color-caramel);
+  margin-bottom: var(--space-4);
+}
+
+.wholesale-cta__title {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--fs-3xl), 4.5vw, var(--fs-5xl));
+  font-weight: 300;
+  color: var(--color-cream);
+  line-height: 1.05;
+  margin-bottom: var(--space-5);
+}
+.wholesale-cta__title em {
+  font-style: italic;
+  color: var(--color-caramel);
+}
+
+.wholesale-cta__desc {
+  font-size: var(--fs-md);
+  color: rgba(245,240,232,0.72);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: var(--space-8);
+}
+
+.wholesale-cta__perks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-bottom: var(--space-8);
+}
+
+.wholesale-cta__perk {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  color: rgba(245,240,232,0.8);
+}
+.wholesale-cta__perk-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: var(--color-caramel);
+  flex-shrink: 0;
+}
+
+.wholesale-cta__actions {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+/* Right side — decorative large number */
+.wholesale-cta__deco {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+  flex-shrink: 0;
+}
+.wholesale-cta__deco-number {
+  font-family: var(--font-serif);
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 300;
+  color: rgba(201,148,90,0.25);
+  line-height: 1;
+  font-style: italic;
+}
+.wholesale-cta__deco-text {
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.3);
+}
+
+/* --- Responsive --- */
+@media (max-width: 800px) {
+  .wholesale-cta__inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  .wholesale-cta__deco {
+    display: none;
+  }
+}

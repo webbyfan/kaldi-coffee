@@ -1,0 +1,175 @@
+/* ============================================
+   WHOLESALE PAGE STYLES
+   ============================================ */
+
+.wholesale-page {
+  padding-top: var(--navbar-height);
+  background-color: var(--color-off-white);
+  min-height: 100vh;
+}
+
+.wholesale-hero {
+  background: linear-gradient(135deg, var(--color-espresso) 0%, #29150d 100%);
+  color: var(--color-cream);
+  padding: clamp(4rem, 8vw, 6.5rem) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.wholesale-hero__title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+  line-height: 1.15;
+}
+
+.wholesale-hero__title em {
+  font-style: italic;
+  color: var(--color-caramel);
+}
+
+.wholesale-hero__desc {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  color: rgba(245, 240, 232, 0.85);
+  line-height: 1.7;
+}
+
+/* Pillar Benefits */
+.wholesale-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.pillar-card {
+  background: #fff;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.pillar-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.pillar-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-espresso);
+}
+
+.pillar-card p {
+  font-size: 0.9rem;
+  color: var(--color-text-body);
+  line-height: 1.6;
+}
+
+/* Tiers & Volume Pricing Table */
+.wholesale-tiers-section {
+  background: var(--color-cream-light);
+  padding: clamp(3.5rem, 6vw, 5rem) 0;
+  border-top: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.tier-card {
+  background: #fff;
+  border-radius: var(--radius-md);
+  padding: 2.25rem 2rem;
+  border: 1.5px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.tier-card.is-featured {
+  border-color: var(--color-espresso);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.tier-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: var(--color-espresso);
+  color: var(--color-cream);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.tier-name {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--color-espresso);
+  margin-bottom: 0.25rem;
+}
+
+.tier-volume {
+  font-size: 0.88rem;
+  color: var(--color-coffee-light);
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.tier-perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  color: var(--color-text-body);
+  margin-bottom: 2rem;
+  flex: 1;
+}
+
+.tier-perks li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: baseline;
+}
+
+.tier-perks li::before {
+  content: '✓';
+  color: var(--color-coffee);
+  font-weight: bold;
+}
+
+/* Inquiry Form Section */
+.wholesale-form-section {
+  padding: clamp(4rem, 7vw, 6rem) 0;
+}
+
+.wholesale-form-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: var(--shadow-md);
+  max-width: 820px;
+  margin: 0 auto;
+}

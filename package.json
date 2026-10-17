@@ -1,0 +1,23 @@
+{
+  "name": "kaldi-and-co-specialty-coffee",
+  "version": "1.0.0",
+  "description": "Kaldi & Co Specialty Coffee Roastery Platform with real Ethiopian payments and automated order routing",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm install --prefix client && npm install --prefix server && npm run build --prefix client",
+    "start": "node server/index.js",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client"
+  },
+  "keywords": [
+    "specialty-coffee",
+    "ecommerce",
+    "ethiopia",
+    "telebirr",
+    "cbe",
+    "chapa"
+  ],
+  "author": "Kaldi & Co",
+  "license": "ISC"
+}

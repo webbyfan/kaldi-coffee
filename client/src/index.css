@@ -1,0 +1,288 @@
+/* ============================================
+   KALDI & CO — GLOBAL CSS DESIGN SYSTEM
+   ============================================ */
+
+/* --- CSS Custom Properties (Design Tokens) --- */
+:root {
+  /* Colors */
+  --color-espresso:     #1a0f0a;
+  --color-coffee-dark:  #2c1810;
+  --color-coffee:       #4a2c1a;
+  --color-coffee-warm:  #6b3d28;
+  --color-coffee-mid:   #8b5e3c;
+  --color-coffee-light: #b8845f;
+  --color-caramel:      #c9945a;
+  --color-cream:        #f5f0e8;
+  --color-cream-light:  #faf7f2;
+  --color-off-white:    #fdfcfa;
+  --color-beige:        #e8ddd0;
+  --color-beige-mid:    #d4c4b0;
+  --color-sage:         #7a8c6e;
+  --color-sage-light:   #a3b498;
+  --color-text-primary: #1a0f0a;
+  --color-text-body:    #3d2b1f;
+  --color-text-muted:   #7a6458;
+  --color-text-light:   #a89080;
+  --color-border:       #e0d5c8;
+  --color-border-light: #ede7de;
+
+  /* Typography */
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Font sizes – fluid scale */
+  --fs-xs:    0.75rem;    /* 12px */
+  --fs-sm:    0.875rem;   /* 14px */
+  --fs-base:  1rem;       /* 16px */
+  --fs-md:    1.125rem;   /* 18px */
+  --fs-lg:    1.25rem;    /* 20px */
+  --fs-xl:    1.5rem;     /* 24px */
+  --fs-2xl:   2rem;       /* 32px */
+  --fs-3xl:   2.5rem;     /* 40px */
+  --fs-4xl:   3.25rem;    /* 52px */
+  --fs-5xl:   4rem;       /* 64px */
+  --fs-6xl:   5rem;       /* 80px */
+
+  /* Spacing */
+  --space-1:   0.25rem;
+  --space-2:   0.5rem;
+  --space-3:   0.75rem;
+  --space-4:   1rem;
+  --space-5:   1.25rem;
+  --space-6:   1.5rem;
+  --space-8:   2rem;
+  --space-10:  2.5rem;
+  --space-12:  3rem;
+  --space-16:  4rem;
+  --space-20:  5rem;
+  --space-24:  6rem;
+  --space-32:  8rem;
+
+  /* Layout */
+  --container-max: 1320px;
+  --container-pad: clamp(1rem, 5vw, 3rem);
+
+  /* Radius */
+  --radius-sm:   4px;
+  --radius-md:   8px;
+  --radius-lg:   16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm:  0 1px 3px rgba(26,15,10,0.08);
+  --shadow-md:  0 4px 16px rgba(26,15,10,0.10);
+  --shadow-lg:  0 12px 40px rgba(26,15,10,0.14);
+  --shadow-xl:  0 24px 64px rgba(26,15,10,0.18);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* Navbar */
+  --navbar-height: 72px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  line-height: 1.7;
+  color: var(--color-text-body);
+  background-color: var(--color-off-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* --- Typography Utilities --- */
+.font-serif    { font-family: var(--font-serif); }
+.font-sans     { font-family: var(--font-sans); }
+.text-center   { text-align: center; }
+.text-left     { text-align: left; }
+.uppercase     { text-transform: uppercase; letter-spacing: 0.12em; }
+.italic        { font-style: italic; }
+
+/* --- Layout Utilities --- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.section-pad {
+  padding-top: clamp(var(--space-16), 8vw, var(--space-32));
+  padding-bottom: clamp(var(--space-16), 8vw, var(--space-32));
+}
+
+/* --- Section Labels --- */
+.section-label {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-coffee-mid);
+  margin-bottom: var(--space-4);
+}
+
+/* --- Button System --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 0.875rem 2rem;
+  font-family: var(--font-sans);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background-color: var(--color-coffee);
+  color: var(--color-cream);
+  border: 1.5px solid var(--color-coffee);
+}
+.btn-primary:hover {
+  background-color: var(--color-coffee-dark);
+  border-color: var(--color-coffee-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-cream);
+  border: 1.5px solid rgba(245,240,232,0.5);
+}
+.btn-outline:hover {
+  background-color: rgba(245,240,232,0.1);
+  border-color: var(--color-cream);
+  transform: translateY(-1px);
+}
+
+.btn-outline-dark {
+  background-color: transparent;
+  color: var(--color-coffee);
+  border: 1.5px solid var(--color-coffee);
+}
+.btn-outline-dark:hover {
+  background-color: var(--color-coffee);
+  color: var(--color-cream);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: var(--color-coffee);
+  border: 1.5px solid transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+.btn-ghost:hover {
+  color: var(--color-coffee-dark);
+}
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-coffee);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-base);
+}
+.btn-ghost:hover::after {
+  transform: scaleX(1);
+}
+
+/* --- Divider --- */
+.divider {
+  width: 48px;
+  height: 1px;
+  background: var(--color-caramel);
+  margin: var(--space-6) 0;
+}
+.divider--center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Focus States --- */
+*:focus-visible {
+  outline: 2px solid var(--color-caramel);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-beige-mid);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-coffee-mid);
+}
+
+/* --- Selection --- */
+::selection {
+  background: var(--color-caramel);
+  color: var(--color-cream);
+}

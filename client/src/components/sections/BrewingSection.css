@@ -1,0 +1,120 @@
+/* ============================================
+   BREWING SECTION
+   ============================================ */
+
+.brewing {
+  background: var(--color-cream-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.brewing__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(var(--space-12), 6vw, var(--space-24));
+  align-items: center;
+}
+
+/* Text side */
+.brewing__text {}
+
+.brewing__heading {
+  font-family: var(--font-serif);
+  font-size: clamp(var(--fs-3xl), 4vw, var(--fs-4xl));
+  font-weight: 400;
+  color: var(--color-espresso);
+  line-height: 1.1;
+  margin-bottom: var(--space-5);
+}
+.brewing__heading em {
+  font-style: italic;
+  color: var(--color-coffee-mid);
+}
+
+.brewing__body {
+  font-size: var(--fs-md);
+  color: var(--color-text-body);
+  line-height: 1.8;
+  margin-bottom: var(--space-8);
+}
+
+.brewing__methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+}
+
+.brewing__method-tag {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-coffee);
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+.brewing__method-tag:hover {
+  background: var(--color-coffee);
+  color: var(--color-cream);
+  border-color: var(--color-coffee);
+}
+
+/* Image side — mosaic */
+.brewing__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: var(--space-3);
+  position: relative;
+}
+
+.brewing__img {
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  width: 100%;
+  transition: transform var(--transition-slow);
+  overflow: hidden;
+  display: block;
+}
+.brewing__img:hover {
+  transform: scale(1.02);
+}
+
+.brewing__img--tall {
+  grid-row: span 2;
+  aspect-ratio: 2 / 3;
+}
+.brewing__img--wide {
+  aspect-ratio: 4 / 3;
+}
+.brewing__img--sq {
+  aspect-ratio: 1;
+}
+
+/* placeholder bg when no real img */
+.brewing__img-placeholder {
+  border-radius: var(--radius-md);
+  background: var(--color-beige);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .brewing__inner {
+    grid-template-columns: 1fr;
+  }
+  .brewing__images {
+    grid-template-columns: 1fr 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

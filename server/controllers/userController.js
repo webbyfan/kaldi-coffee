@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import User from '../models/User.js';
 import generateToken from '../utils/generateToken.js';
 
@@ -8,8 +9,11 @@ export const authUser = async (req, res) => {
   const { email, password } = req.body;
   const cleanEmail = email?.trim().toLowerCase();
 
-  // 1. Admin Master Account check (belemaz0518@gmail.com / 823467)
-  if (cleanEmail === 'belemaz0518@gmail.com' && password === '823467') {
+  const masterAdminEmail = (process.env.ADMIN_EMAIL || 'admin@kaldicoffee.com').trim().toLowerCase();
+  const masterAdminPassword = process.env.ADMIN_PASSWORD || 'admin123';
+
+  // 1. Admin Master Account check (configured via env or default)
+  if (cleanEmail === masterAdminEmail && password === masterAdminPassword) {
     let adminUser = null;
     try {
       if (mongoose.connection && mongoose.connection.readyState === 1) {
@@ -18,12 +22,12 @@ export const authUser = async (req, res) => {
           adminUser = await User.create({
             name: 'Kaldi Admin',
             email: cleanEmail,
-            password: '823467',
+            password: masterAdminPassword,
             isAdmin: true,
           });
         } else if (!adminUser.isAdmin) {
           adminUser.isAdmin = true;
-          adminUser.password = '823467';
+          adminUser.password = masterAdminPassword;
           await adminUser.save();
         }
       }

@@ -243,11 +243,11 @@ export const sendOrderReceiptEmail = async (orderData) => {
 
 /**
  * Send Store Notification email to the Store Business Owner / Manager
- * Primary Recipient: process.env.STORE_EMAIL || 'kalidcoexample@gmail.com'
+ * Primary Recipient: process.env.STORE_EMAIL || 'orders@kaldicoffee.com'
  * (Easily configurable in server/.env when the website is sold)
  */
 export const sendStoreOrderNotification = async (orderData) => {
-  const storeEmail = process.env.STORE_EMAIL || 'kalidcoexample@gmail.com';
+  const storeEmail = process.env.STORE_EMAIL || 'orders@kaldicoffee.com';
   const transporter = createTransporter();
   const emailUser = process.env.EMAIL_USER;
 
@@ -375,7 +375,7 @@ export const sendStoreOrderNotification = async (orderData) => {
 
 /**
  * Send Contact or Wholesale Inquiry email to the Store Business Owner
- * Recipient: process.env.STORE_EMAIL || 'kalidcoexample@gmail.com'
+ * Recipient: process.env.STORE_EMAIL || 'orders@kaldicoffee.com'
  */
 export const sendInquiryEmail = async ({
   type = 'contact',
@@ -389,7 +389,7 @@ export const sendInquiryEmail = async ({
   subject = '',
   message = '',
 }) => {
-  const storeEmail = process.env.STORE_EMAIL || 'kalidcoexample@gmail.com';
+  const storeEmail = process.env.STORE_EMAIL || 'orders@kaldicoffee.com';
   const transporter = createTransporter();
   const emailUser = process.env.EMAIL_USER;
 

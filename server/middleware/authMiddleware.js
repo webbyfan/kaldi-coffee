@@ -13,7 +13,7 @@ export const protect = async (req, res, next) => {
         req.user = {
           _id: 'admin_master_001',
           name: 'Kaldi Admin',
-          email: 'belemaz0518@gmail.com',
+          email: process.env.ADMIN_EMAIL || 'admin@kaldicoffee.com',
           isAdmin: true,
         };
         return next();
@@ -26,7 +26,7 @@ export const protect = async (req, res, next) => {
         req.user = {
           _id: 'admin_master_001',
           name: 'Kaldi Admin',
-          email: 'belemaz0518@gmail.com',
+          email: process.env.ADMIN_EMAIL || 'admin@kaldicoffee.com',
           isAdmin: true,
         };
       }

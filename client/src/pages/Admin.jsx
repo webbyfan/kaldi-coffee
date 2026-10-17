@@ -152,7 +152,7 @@ export default function Admin() {
               Admin Access Required
             </h1>
             <p style={{ color: 'var(--color-text-muted)', lineHeight: '1.6', marginBottom: '2rem', fontSize: '0.95rem' }}>
-              This portal is restricted to authorized managers. Please log in with your administrator account (<strong>belemaz0518@gmail.com</strong>).
+              This portal is restricted to authorized managers. Please log in with your administrator account.
             </p>
             <Link to="/login" className="btn btn-primary" style={{ padding: '0.85rem 2rem', display: 'inline-block' }}>
               Log In as Admin

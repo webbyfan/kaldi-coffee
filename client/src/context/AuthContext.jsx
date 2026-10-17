@@ -34,11 +34,11 @@ export function AuthProvider({ children }) {
       return data;
     } catch (error) {
       // Offline fallback for master admin
-      if (cleanEmail === 'belemaz0518@gmail.com' && password === '823467') {
+      if (cleanEmail === 'admin@kaldicoffee.com' && password === 'admin123') {
         const adminData = {
           _id: 'admin_master_001',
           name: 'Kaldi Admin',
-          email: 'belemaz0518@gmail.com',
+          email: 'admin@kaldicoffee.com',
           isAdmin: true,
           token: 'mock_admin_token_2026',
         };

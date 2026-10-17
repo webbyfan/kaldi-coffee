@@ -1,4 +1,9 @@
-# Kaldi & Co. — Ethiopian Specialty Coffee & Roastery Platform
+# ☕ Kaldi & Co. — Ethiopian Specialty Coffee & Roastery Platform
+
+[![Live Website](https://img.shields.io/badge/Live_Website-kaldi--coffee.onrender.com-success?style=for-the-badge&logo=render&logoColor=white)](https://kaldi-coffee.onrender.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=for-the-badge&logo=github)](https://github.com/webbyfan/kaldi-coffee)
+
+🌐 **Live Website**: [https://kaldi-coffee.onrender.com](https://kaldi-coffee.onrender.com)
 
 A full-stack specialty coffee e-commerce and roastery management platform built for Ethiopian specialty beans (Yirgacheffe, Sidama, Guji, Harrar, Limu, and Kaffa). Includes real-time Ethiopian payment integrations (Telebirr, CBE Mobile, Chapa), automated order routing, customer receipts, and an administrative order fulfillment dashboard.
 
